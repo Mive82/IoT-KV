@@ -1,0 +1,65 @@
+dependencies:
+  abobija/rc522:
+    component_hash: 
+      041887e58a81f8261aa370bd5f62b54edfe0396e226fb565ae14ce41af0ad891
+    dependencies:
+    - name: idf
+      require: private
+      version: ^5.0
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 3.4.3
+  esp-idf-lib/esp_idf_lib_helpers:
+    component_hash: 
+      689853bb8993434f9556af0f2816e808bf77b5d22100144b21f3519993daf237
+    dependencies: []
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    targets:
+    - esp32
+    - esp32c2
+    - esp32c3
+    - esp32c5
+    - esp32c6
+    - esp32c61
+    - esp32h2
+    - esp32p4
+    - esp32s2
+    - esp32s3
+    version: 1.4.0
+  esp-idf-lib/ultrasonic:
+    component_hash: 
+      da9c0899db56f6a994090e6d8257dc11a2daae241cf9368da7d06b95b7d0ee72
+    dependencies:
+    - name: esp-idf-lib/esp_idf_lib_helpers
+      registry_url: https://components.espressif.com
+      require: private
+      version: '*'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    targets:
+    - esp32
+    - esp32c2
+    - esp32c3
+    - esp32c5
+    - esp32c6
+    - esp32c61
+    - esp32h2
+    - esp32p4
+    - esp32s2
+    - esp32s3
+    version: 1.1.0
+  idf:
+    source:
+      type: idf
+    version: 5.5.2
+direct_dependencies:
+- abobija/rc522
+- esp-idf-lib/ultrasonic
+- idf
+manifest_hash: be45ff663c494591ac47c15852259f7f0c69394e2191e99a12b1556a49d6358c
+target: esp32
+version: 2.0.0
