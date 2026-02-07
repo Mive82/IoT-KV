@@ -9,8 +9,8 @@ void motor_init()
 	// WGM10, WGM11, WGM12
 	DDRB |= (1 << PB1) | (1 << PB2);
 
-	TCCR1A |= (1 << WGM10) | (1 << WGM11) | (1 << COM1A1);
-	TCCR1B |= (1 << WGM12) | (1 << CS10);
+	TCCR1A |= (1 << WGM10) | (1 << WGM11) | (1 << COM1A1) | (1 << COM1B1);
+	TCCR1B |= (1 << CS10);
 
 	OCR1A = 0;
 	OCR1B = 0;
@@ -25,7 +25,7 @@ void motor_stop(void)
   OCR1A = 0;
 	OCR1B = 0;
 #else
-  uart_println(__func__);
+	uart_println(__func__);
 #endif
 }
 
@@ -35,7 +35,7 @@ void motor_start_opening(void)
 	OCR1B = 0;
   OCR1A = 250;
 #else
-  uart_println(__func__);
+	uart_println(__func__);
 #endif
 }
 
@@ -45,6 +45,6 @@ void motor_start_closing(void)
 	OCR1A = 0;
   OCR1B = 250;
 #else
-  uart_println(__func__);
+	uart_println(__func__);
 #endif
 }

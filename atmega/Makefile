@@ -11,8 +11,16 @@ FILENAME   ?= main
 CC          = avr-gcc 
 OBJCOPY     = avr-objcopy
 SIZE        = avr-size
-CFLAGS      = -Wall -Os -DF_CPU=$(CLOCK) -mmcu=$(DEVICE) -DMIVE_DEBUG=1
+CFLAGS      = -Wall -Os -DF_CPU=$(CLOCK) -mmcu=$(DEVICE)
 AVRDUDE     = avrdude
+
+ifndef debug
+debug := 0
+endif
+
+ifeq ($(debug),1)
+CFLAGS += -DMIVE_DEBUG=1
+endif
 
 ## -------------------------------------------- ##
 ## ------ TARGETI/TASKOVI POČINJU ODAVDE ------ ##
